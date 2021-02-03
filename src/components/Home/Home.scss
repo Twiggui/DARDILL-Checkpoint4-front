@@ -1,0 +1,57 @@
+@import '../Variables';
+
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+
+  .annonces,
+  .animaux,
+  .urgences {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10px;
+    width: 400px;
+    height: 400px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    transition: 250ms ease-in-out, transform 150ms ease;
+
+    &:hover,
+    &:focus {
+      width: 420px;
+      height: 420px;
+    }
+
+    .image {
+      width: 80%;
+      height: 80%;
+      position: relative;
+      top: 50px;
+    }
+    .button {
+      position: relative;
+      top: 50px;
+      cursor: pointer;
+      border-radius: 30px;
+      border: none;
+      width: 200px;
+      height: 100px;
+      background-color: $secondary-color;
+      color: $primary-font-color;
+      color: #ffffff;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+      transition: background 250ms ease-in-out, transform 150ms ease;
+
+      &:hover,
+      &:focus {
+        background: #00ba19;
+      }
+    }
+  }
+}
