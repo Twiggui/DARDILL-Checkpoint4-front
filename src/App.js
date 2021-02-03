@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
-import SignIn from './components/SignIn/SignIn';
-import SignUp from './components/SignUp/SignUp';
-import Annonces from './components/Annonces/Annonces';
-import FicheDetail from './components/Annonces/FicheDetail';
+// import SignIn from './components/SignIn/SignIn';
+// import SignUp from './components/SignUp/SignUp';
+// import Annonces from './components/Annonces/Annonces';
+// import FicheDetail from './components/Annonces/FicheDetail';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route path='/signIn'>
+          {/* <Route path='/signIn'>
             <SignIn />
           </Route>
           <Route path='/signUp'>
@@ -28,7 +28,7 @@ function App() {
           </Route>
           <Route path='/annonces/:idAnimal'>
             <FicheDetail />
-          </Route>
+          </Route> */}
           <Route path='/animaux'></Route>
           <Route path='/urgences'></Route>
         </Switch>

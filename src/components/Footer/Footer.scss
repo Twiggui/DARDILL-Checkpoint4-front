@@ -8,9 +8,10 @@
   align-items: center;
   button {
     height: 50px;
+    min-width: 170px;
     display: inline-block;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem 20px;
     text-decoration: none;
     background: $secondary-color;
     color: #ffffff;
