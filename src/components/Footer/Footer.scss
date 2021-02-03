@@ -1,0 +1,36 @@
+@import '../Variables';
+
+.footer {
+  background-color: $primary-color;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  button {
+    height: 50px;
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background: $secondary-color;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+
+    &:hover,
+    &:focus {
+      background: #00ba19;
+    }
+
+    &:focus {
+      outline: 1px solid #fff;
+      outline-offset: -4px;
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+  }
+}
