@@ -16,10 +16,24 @@
     left: 70px;
     width: 90px;
   }
+  .navigation {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .link {
     text-decoration: none;
     color: $primary-font-color;
     padding: 0px 50px;
+    min-height: 80%;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    &:active,
+    &:hover {
+      background-color: $secondary-color;
+    }
   }
 }
 
