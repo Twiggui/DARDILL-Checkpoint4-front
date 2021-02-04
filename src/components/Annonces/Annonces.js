@@ -112,8 +112,8 @@ const Annonces = () => {
         </div>
       </div>
       <div className='annonces-list'>
-        {allAnimals.map((animal) => (
-          <div key={animal.nom} className='annonce'>
+        {allAnimals.map((animal, index) => (
+          <div key={index} className='annonce'>
             <FicheAnnonce animal={animal} />
           </div>
         ))}

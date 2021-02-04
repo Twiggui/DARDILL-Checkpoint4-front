@@ -1,38 +1,39 @@
 import './FicheDetail.scss';
 import React, { useContext, useEffect, useState } from 'react';
-import chat from '../../images/chat.jpg';
 import API from '../../services/API';
 import { UserContext } from '../../context/UserContext';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 const FicheDetail = () => {
   const { currentAnimalId } = useContext(UserContext);
   const [currentAnimal, setCurrentAnimal] = useState({});
 
   useEffect(() => {
-    API.get(`/animals/${currentAnimalId}`).then((res) =>
-      setCurrentAnimal(res.data[0])
-    );
+    API.get(`/animals/${currentAnimalId}`).then((res) => {
+      setCurrentAnimal(res.data[0]);
+    });
   }, [currentAnimalId]);
 
   return (
     <div className='ficheDetail'>
-      {/* {currentAnimal && (
-        <div> */}
       <div className='recapitulatif'>
         <div className='presentationAnimal'>
-          <h2> Nom de l'animal</h2>
+          <h2> {currentAnimal.name}</h2>
           <img
             className='imageAnimal'
-            src={chat}
+            src={`${process.env.REACT_APP_API_BASE_URL}/uploads/${currentAnimal.image1}`}
             alt="profil de l'animal"
           ></img>
+          <div>
+            Date de mise à l'adoption : {currentAnimal.adoptionDepositDate}
+          </div>
         </div>
         <div className='aside'>
           <div className='caracteristiques'>
             <div className='title'>Général</div>
             <div className='title'>Santé</div>
             <div className='title'>Comportement</div>
-
             <div className='sexe'>{currentAnimal.sex}</div>
             <div className='vaccin'>Vacciné : {currentAnimal.vaccine}</div>
             <div className='caractere1'>{currentAnimal.temper1}</div>
@@ -46,49 +47,67 @@ const FicheDetail = () => {
             <div className='medical2'>{currentAnimal.health2}</div>
             <div className='caractere4'>{currentAnimal.temper4}</div>
           </div>
-          <div className='detailAnnonce'>
-            <div>
-              Date de mise à l'adoption : {currentAnimal.adoptionDepositDate}
-            </div>
-          </div>
+          <div className='detailAnnonce'></div>
         </div>
       </div>
       <div className='details'>
-        <div className='histoire'>
+        <div className='history'>
           <h3>Association : </h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lorem
-            nec neque congue fermentum at sed mauris. Quisque elementum, nisl
-            sed mollis pulvinar, ipsum augue vestibulum ante, ut accumsan quam
-            eros nec nibh. Mauris vel vestibulum sem. Nunc tristique rutrum
-            neque, lobortis cursus augue cursus ut. Praesent blandit sed urna id
-            iaculis. Suspendisse at sem et ex hendrerit semper ullamcorper nec
-            est. Maecenas a ex suscipit, luctus risus at, fringilla risus..{' '}
-          </p>
+          <p>{currentAnimal.Description} </p>
         </div>
-        <div className='galeriePhotos'>
-          <div className='photo'>
-            <img src={chat} alt='animal' />
-          </div>
-          <div className='photo'>
-            <img src={chat} alt='animal' />
-          </div>
-          <div className='photo'>
-            <img src={chat} alt='animal' />
-          </div>
-          <div className='photo'>
-            <img src={chat} alt='animal' />
-          </div>
-          <div className='photo'>
-            <img src={chat} alt='animal' />
-          </div>
-          <div className='photo'>
-            <img src={chat} alt='animal' />
-          </div>
-        </div>
+        <Carousel className='galeriePhotos'>
+          {currentAnimal && currentAnimal.gallery1 !== null ? (
+            <div className='photo'>
+              <img
+                src={`${process.env.REACT_APP_API_BASE_URL}/uploads/${currentAnimal.gallery1}`}
+                alt='animal'
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {currentAnimal && currentAnimal.gallery2 !== null ? (
+            <div className='photo'>
+              <img
+                src={`${process.env.REACT_APP_API_BASE_URL}/uploads/${currentAnimal.gallery2}`}
+                alt='animal'
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {currentAnimal && currentAnimal.gallery3 !== null ? (
+            <div className='photo'>
+              <img
+                src={`${process.env.REACT_APP_API_BASE_URL}/uploads/${currentAnimal.gallery3}`}
+                alt='animal'
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {currentAnimal && currentAnimal.gallery4 !== null ? (
+            <div className='photo'>
+              <img
+                src={`${process.env.REACT_APP_API_BASE_URL}/uploads/${currentAnimal.gallery4}`}
+                alt='animal'
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {currentAnimal && currentAnimal.gallery5 !== null ? (
+            <div className='photo'>
+              <img
+                src={`${process.env.REACT_APP_API_BASE_URL}/uploads/${currentAnimal.gallery5}`}
+                alt='animal'
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </Carousel>
       </div>
-      {/* </div>
-      )} */}
     </div>
   );
 };
