@@ -1,6 +1,18 @@
 @import '../Variables';
 .annonces {
   min-height: 80vh;
+  .add-cat {
+    display: flex;
+    align-items: center;
+    background-color: rgb(250, 246, 246);
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin-left: 50px;
+      margin-right: 20px;
+    }
+  }
   .filtres {
     width: 100%;
     height: 100px;

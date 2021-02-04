@@ -34,18 +34,50 @@ const FicheDetail = () => {
             <div className='title'>Général</div>
             <div className='title'>Santé</div>
             <div className='title'>Comportement</div>
-            <div className='sexe'>{currentAnimal.sex}</div>
-            <div className='vaccin'>Vacciné : {currentAnimal.vaccine}</div>
-            <div className='caractere1'>{currentAnimal.temper1}</div>
-            <div className='age'>Age : {currentAnimal.age} ans</div>
-            <div className='tatouage'>Tatouage : {currentAnimal.tatoo}</div>
-            <div className='caractere2'>{currentAnimal.temper2}</div>
-            <div className='couleur'>Couleur : {currentAnimal.color}</div>
-            <div className='medical1'>{currentAnimal.health1}</div>
-            <div className='caractere3'>{currentAnimal.temper3}</div>
-            <div className='race'>Race : {currentAnimal.race}</div>
-            <div className='medical2'>{currentAnimal.health2}</div>
-            <div className='caractere4'>{currentAnimal.temper4}</div>
+            <div className='sexe'>
+              <li>{currentAnimal.sex}</li>
+            </div>
+            <div className='vaccin'>
+              {currentAnimal.vaccine ? (
+                <li>Vacciné : {currentAnimal.vaccine}</li>
+              ) : (
+                ''
+              )}
+            </div>
+            <div className='caractere1'>
+              {currentAnimal.temper1 ? <li>{currentAnimal.temper1}</li> : ''}
+            </div>
+            <div className='age'>
+              <li>Age : {currentAnimal.age} ans</li>
+            </div>
+            <div className='tatouage'>
+              {currentAnimal.tatoo ? (
+                <li>Tatouage : {currentAnimal.tatoo}</li>
+              ) : (
+                ''
+              )}
+            </div>
+            <div className='caractere2'>
+              {currentAnimal.temper2 ? <li>{currentAnimal.temper2}</li> : ''}
+            </div>
+            <div className='couleur'>
+              <li>Couleur : {currentAnimal.color}</li>
+            </div>
+            <div className='medical1'>
+              {currentAnimal.health1 ? <li>{currentAnimal.health1}</li> : ''}
+            </div>
+            <div className='caractere3'>
+              {currentAnimal.temper3 ? <li>{currentAnimal.temper3}</li> : ''}
+            </div>
+            <div className='race'>
+              <li>Race : {currentAnimal.race}</li>
+            </div>
+            <div className='medical2'>
+              {currentAnimal.health2 ? <li>{currentAnimal.health2}</li> : ''}
+            </div>
+            <div className='caractere4'>
+              {currentAnimal.temper4 ? <li>{currentAnimal.temper4}</li> : ''}
+            </div>
           </div>
           <div className='detailAnnonce'></div>
         </div>

@@ -7,10 +7,13 @@
   justify-content: space-between;
   align-items: center;
   color: $primary-font-color;
-  .logo {
-    position: absolute;
-    left: 70px;
-    width: 90px;
+  .link-logo {
+    .logo {
+      position: absolute;
+      left: 70px;
+      top: 0px;
+      width: 90px;
+    }
   }
   .navigation {
     height: 100%;

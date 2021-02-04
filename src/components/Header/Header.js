@@ -44,7 +44,10 @@ const Header = () => {
           <NavLink to='/urgences'>Urgences</NavLink>
         </Menu>
       </div>
-      <img className='logo' alt='logo' src={logo} />
+      <NavLink to='/' className='link-logo'>
+        <img className='logo' alt='logo' src={logo} />
+      </NavLink>
+
       <div className='navigation'>
         <NavLink to='/' className='link'>
           Home

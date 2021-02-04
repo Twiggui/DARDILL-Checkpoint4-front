@@ -44,11 +44,9 @@ const FicheAnnonce = (props) => {
           <div className='race'>Race : {animal.race}</div>
           <div>Date de mise à l'adoption : {animal.adoptionDepositDate}</div>
         </div>
-        <button className='detailAnnonceBoutton'>
-          <Link to={`/annonces/${animal.id}`} onClick={getCurrentAnimalId}>
-            Voir l'annonce !
-          </Link>
-        </button>
+        <Link to={`/annonces/${animal.id}`} onClick={getCurrentAnimalId}>
+          <button className='detailAnnonceBoutton'>Voir l'annonce ! </button>
+        </Link>
       </div>
       <div className='aside'>
         <div className='detailAnnonce'></div>

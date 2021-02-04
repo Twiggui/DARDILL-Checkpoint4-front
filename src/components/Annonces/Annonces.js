@@ -3,9 +3,11 @@ import FicheAnnonce from './template/FicheAnnonce';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { UserContext } from '../../context/UserContext';
+import plus from '../../images/plus.png';
 
 import './Annonces.scss';
 import API from '../../services/API';
+import { NavLink } from 'react-router-dom';
 
 const Annonces = () => {
   const { allAnimals, setAllAnimals } = useContext(UserContext);
@@ -64,6 +66,12 @@ const Annonces = () => {
 
   return (
     <div className='annonces'>
+      <div className='add-cat'>
+        <NavLink to='/annonces/add'>
+          <img alt='add a cat' src={plus} />
+        </NavLink>
+        <h2>Ajouter une annonce</h2>
+      </div>
       <div className='filtres'>
         <div className='filtreCategories'>
           <InputLabel htmlFor='select'>Sexe</InputLabel>
