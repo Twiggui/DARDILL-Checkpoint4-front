@@ -14,6 +14,12 @@ const FicheAnnonce = (props) => {
     setCurrentAnimalId(animal.id);
   };
 
+  console.log(animal);
+  console.log(
+    'depositedate',
+    new Date(animal.adoptionDepositDate).toUTCString()
+  );
+
   return (
     <div className='ficheAnnonce'>
       <div className='presentationAnimal'>
@@ -42,9 +48,15 @@ const FicheAnnonce = (props) => {
           <div className='sexe'>{animal.sex}</div>
           <div className='age'>Age : {animal.age} ans</div>
           <div className='race'>Race : {animal.race}</div>
-          <div className='adoptionDate'>
-            Date de mise à l'adoption : {animal.adoptionDepositDate}
-          </div>
+          {animal && (
+            <div className='adoptionDate'>
+              Date de mise à l'adoption :
+              {new Date(animal.adoptionDepositDate).getDate()}/
+              {new Date(animal.adoptionDepositDate).getMonth() < 10 && '0'}
+              {new Date(animal.adoptionDepositDate).getMonth() + 1}/
+              {new Date(animal.adoptionDepositDate).getFullYear()}
+            </div>
+          )}
         </div>
         <Link to={`/annonces/${animal.id}`} onClick={getCurrentAnimalId}>
           <button className='detailAnnonceBoutton'>Voir l'annonce ! </button>

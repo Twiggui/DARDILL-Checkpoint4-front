@@ -4,6 +4,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { UserContext } from '../../context/UserContext';
 import plus from '../../images/plus.png';
+import minus from '../../images/moins.png';
+import modify from '../../images/modify.png';
 
 import './Annonces.scss';
 import API from '../../services/API';
@@ -66,11 +68,25 @@ const Annonces = () => {
 
   return (
     <div className='annonces'>
-      <div className='add-cat'>
-        <NavLink to='/annonces/add'>
-          <img alt='add a cat' src={plus} />
-        </NavLink>
-        <h2>Ajouter une annonce</h2>
+      <div className='annonces-action'>
+        <div className='add-cat'>
+          <NavLink to='/annonces/add'>
+            <img alt='add a cat' src={plus} />
+          </NavLink>
+          <h2>Ajouter une annonce</h2>
+        </div>
+        <div className='remove-cat'>
+          {/* <NavLink to='/annonces/add'> */}
+          <img alt='add a cat' src={minus} />
+          {/* </NavLink> */}
+          <h2>Retirer une annonce</h2>
+        </div>
+        <div className='modify-cat'>
+          {/* <NavLink to='/annonces/add'> */}
+          <img alt='add a cat' src={modify} />
+          {/* </NavLink> */}
+          <h2>Modifier une annonce</h2>
+        </div>
       </div>
       <div className='filtres'>
         <div className='filtreCategories'>
