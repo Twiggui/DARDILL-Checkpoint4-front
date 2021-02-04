@@ -9,7 +9,9 @@ const Footer = () => {
         des fonds privés et ne bénéficie d’aucune subvention publique. Nous
         avons besoin de vous !
       </p>
-      <button type='button'>Faire un don</button>
+      <button className='footer-button' type='button'>
+        Faire un don
+      </button>
     </div>
   );
 };

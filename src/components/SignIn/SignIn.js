@@ -65,7 +65,7 @@ export default function SignIn() {
       .catch(() => console.log('error'));
   };
   const handleRedirect = () => {
-    history.push('/animaux');
+    history.push('/');
   };
 
   return (
