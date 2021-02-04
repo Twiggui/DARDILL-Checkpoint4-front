@@ -79,6 +79,13 @@ export default function AddAnnonce() {
     color: Joi.string().max(50).required(),
     race: Joi.string().max(50).required(),
     vaccine: Joi.string().max(50).required(),
+    tatoo: Joi.string().max(50).required(),
+    health1: Joi.string().max(50).allow('').optional(),
+    health2: Joi.string().max(50).allow('').optional(),
+    temper1: Joi.string().max(50).allow('').optional(),
+    temper2: Joi.string().max(50).allow('').optional(),
+    temper3: Joi.string().max(50).allow('').optional(),
+    temper4: Joi.string().max(50).allow('').optional(),
   });
 
   const { errors, register, handleSubmit } = useForm({
@@ -142,7 +149,7 @@ export default function AddAnnonce() {
                   variant='outlined'
                   id='Date de naissance'
                   label='Date de naissance'
-                  type='datetime-local'
+                  type='date'
                   fullWidth
                   className='textField'
                   InputLabelProps={{
@@ -167,7 +174,6 @@ export default function AddAnnonce() {
                   inputRef={register}
                   required
                   error={!!errors.sex}
-                  helperText={errors.sex && 'Un sexe est obligatoire'}
                 >
                   <option value=''></option>
                   <option value='Femelle'>Femelle</option>
@@ -186,7 +192,6 @@ export default function AddAnnonce() {
                   inputRef={register}
                   required
                   error={!!errors.color}
-                  helperText={errors.color && 'Une couleur est obligatoire'}
                 >
                   <option value=''></option>
                   <option value='Noir'>Noir</option>
@@ -211,7 +216,6 @@ export default function AddAnnonce() {
                   inputRef={register}
                   required
                   error={!!errors.race}
-                  helperText={errors.race && 'Une race est obligatoire'}
                 >
                   <option value=''></option>
                   <option value='Europeen'>Européen</option>
@@ -231,7 +235,6 @@ export default function AddAnnonce() {
                   inputRef={register}
                   required
                   error={!!errors.vaccine}
-                  helperText={errors.vaccine && 'Obligatoire'}
                 >
                   <option value=''></option>
                   <option value='Oui'>Oui</option>
@@ -262,7 +265,7 @@ export default function AddAnnonce() {
                   fullWidth
                   name='health1'
                   label='Problème de santé 1 ? Ne pas remplir si RAS'
-                  id='Problème de santé 1 ?'
+                  //   id='Problème de santé 1 ?'
                   inputRef={register}
                   value={health1}
                   onChange={(e) => {
