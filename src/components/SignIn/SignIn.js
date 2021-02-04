@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import { useHistory } from 'react-router-dom';
 
 import API from '../../services/API';
+import { UserContext } from '../../context/UserContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,12 +49,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
+  const { setUserDetails, setLoggedIn } = useContext(UserContext);
+
   const history = useHistory();
   const classes = useStyles();
   const { register, handleSubmit } = useForm({ mode: 'onBlur' });
   const onSubmit = (data) => {
     API.post('/auth/signIn', data)
-      .then(() => handleRedirect())
+      .then(async (res) => {
+        await setUserDetails(res.data);
+        await setLoggedIn(true);
+        handleRedirect();
+      })
+
       .catch(() => console.log('error'));
   };
   const handleRedirect = () => {

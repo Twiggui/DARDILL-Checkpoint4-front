@@ -1,0 +1,64 @@
+@import '../Variables';
+
+.ficheDetail {
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-color;
+  .recapitulatif {
+    margin: 10px 0;
+    display: flex;
+    width: 90%;
+    min-height: 300px;
+    .presentationAnimal {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      .imageAnimal {
+        width: 80%;
+      }
+    }
+    .aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 70%;
+      .caracteristiques {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 10px;
+        text-align: left;
+        margin-left: 10%;
+        .title {
+          font-weight: bold;
+        }
+      }
+      .detailAnnonce {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+  }
+  .details {
+    display: flex;
+    justify-content: space-between;
+    .histoire {
+      width: 50%;
+    }
+    .galeriePhotos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 50%;
+      .photo {
+        img {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

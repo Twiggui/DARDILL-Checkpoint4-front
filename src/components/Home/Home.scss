@@ -6,9 +6,9 @@
   align-items: center;
   width: 100vw;
 
-  .annonces,
-  .animaux,
-  .urgences {
+  .home-annonces,
+  .home-animaux,
+  .home-urgences {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

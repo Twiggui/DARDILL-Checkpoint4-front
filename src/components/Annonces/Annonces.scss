@@ -1,0 +1,33 @@
+@import '../Variables';
+.annonces {
+  min-height: 80vh;
+  .filtres {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(250, 246, 246);
+    .filtreCategories {
+      margin: 10px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .annonces-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    .annonce {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 30px;
+    }
+  }
+}

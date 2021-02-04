@@ -93,6 +93,36 @@
 /* Individual item */
 .bm-item {
   display: inline-block;
+  padding-top: 10px;
+  button {
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    background-color: $primary-color;
+    color: $primary-font-color;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: 250ms ease-in-out, transform 150ms ease;
+
+    &:hover,
+    &:focus {
+      background: rgb(130, 0, 182);
+    }
+  }
+  .welcome-user-message {
+    color: $primary-font-color;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  img {
+    padding-top: 30px;
+    width: 100px;
+  }
 }
 
 /* Styling of overlay */
